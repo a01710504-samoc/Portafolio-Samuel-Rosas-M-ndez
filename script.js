@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
       setTimeout(() => {
         currentAudio.pause();
         currentAudio.currentTime = 0;
-      }, 22000);
+      }, 222000);
     });
   }
 
