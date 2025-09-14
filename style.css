@@ -1,0 +1,204 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* --- NAVBAR FIJO MINIMALISTA --- */
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px; 
+  background: transparent;
+  color: white;
+  z-index: 1000;
+  font-size: 32px;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+
+#navbar .nav-left,
+#navbar .nav-right a {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+#navbar .nav-left a {
+  color: #4CAF50;
+  text-decoration: none;
+  pointer-events: auto;
+}
+
+#navbar .nav-left a:hover {
+  color: #80e27e; 
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+#navbar .nav-right {
+  display: flex;
+  gap: 12px;
+  pointer-events: auto;
+  margin-right: 10px;
+}
+
+#navbar .nav-right a {
+  color: rgba(255,255,255,0.9);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+#navbar .nav-right a:hover {
+  color: rgb(84, 175, 51);
+  transform: scale(1.05);
+}
+
+/* --- HERO --- */
+#hero {
+  min-height: 100vh; /* permite crecer con contenido */
+  width: 100%;
+  background: url("img/fondo.jpg") no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 70px; /* compensa navbar fijo */
+  box-sizing: border-box;
+}
+
+/* --- BOTÓN NUBE --- */
+#playBtn {
+  background: linear-gradient(145deg, #ffffff, #e0f0ff);
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1), 0 0 30px rgba(224,240,255,0.5);
+  padding: 25px 50px;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+#playBtn:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.15), 0 0 40px rgba(224,240,255,0.6);
+}
+
+#playBtn:active {
+  transform: translateY(0px) scale(0.95);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1), 0 0 20px rgba(224,240,255,0.4);
+}
+
+/* --- SECCIONES GENERALES --- */
+.section {
+  min-height: 100vh;
+  padding: 80px 50px;
+  background: #f5f5f5;
+  border-top: 2px solid #ddd;
+}
+
+.section:nth-child(even) {
+  background: #e8e8e8;
+}
+
+.section h1 {
+  margin-top: 0;
+}
+
+/* Fondo oscuro con imagen y gradiente */ #acerca::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('img/fondoabajo2.jpeg') center center no-repeat; background-size: cover, cover; background-position: center center; background-repeat: no-repeat; z-index: 0; }
+
+/* --- SECCIÓN ACERCA DE (mejor centrado y espacio inferior) --- */
+#acerca {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;      /* centra verticalmente */
+  align-items: center;          /* centra horizontalmente */
+  background: #111;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  padding: 0 20px 24px;         /* menos padding-top, algo de espacio abajo */
+  text-align: center;
+  scroll-margin-top: 70px;      /* compensa navbar al usar anclas */
+  gap: 20px;                    /* separación entre bloques */
+  box-sizing: border-box;
+}
+
+/* bloque superior: título + párrafo (ajustable) */
+#acerca .acerca-top {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  max-width: 920px;
+  box-sizing: border-box;
+}
+
+/* reducimos foto para que el conjunto quepa mejor en pantallas pequeñas */
+#acerca .acerca-photo {
+  width: 240px;    /* antes 300/420 */
+  height: 240px;
+  overflow: hidden;
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+}
+
+/* imagen dentro de la foto */
+#acerca .acerca-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.9);
+}
+
+/* redes: tamaño más comedido y margen inferior */
+#acerca .acerca-bottom {
+  display: flex;
+  gap: 22px;
+  justify-content: center;
+  margin-top: 8px;
+  z-index: 1;
+}
+
+/* iconos más pequeños para asegurar visibilidad */
+#acerca .acerca-bottom a {
+  font-size: 2.1rem;   /* antes 3-4rem */
+  color: #fff;
+  transition: transform .25s ease, color .25s ease;
+}
+
+#acerca .acerca-bottom a:hover {
+  transform: scale(1.18);
+  color: rgb(84, 175, 51);
+}
+
+/* responsive: hacer la foto e íconos más pequeños en móviles */
+@media (max-width: 768px) {
+  #acerca .acerca-top h2 { font-size: 2.6rem; }
+  #acerca .acerca-top p { font-size: 1.15rem; max-width: 92%; }
+  #acerca .acerca-photo { width: 180px; height: 180px; }
+  #acerca .acerca-bottom a { font-size: 1.9rem; gap: 14px; }
+}
