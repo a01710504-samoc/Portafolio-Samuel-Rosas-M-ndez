@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Dame un sonido</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Librería de iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- defer asegura que el DOM exista antes de correr script.js -->
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- Barra de navegación fija -->
+  <header id="navbar">
+    <div class="nav-left">
+      <a href="#hero">samoc :))</a>
+    </div>
+    <div class="nav-right">
+      <a href="#acerca">Acerca de</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+  </header>
+
+  <!-- Sección de bienvenida con imagen de fondo -->
+  <section id="hero">
+    <div id="content">
+      <!-- Botón nube -->
+      <button id="btn-nube">☁️ Reproduce un sonido</button>
+    </div>
+  </section>
+
+  <!-- Sección "Acerca de" -->
+  <section id="acerca">
+    <!-- Bloque superior: nombre y descripción -->
+    <div class="acerca-top">
+      <h2>Samuel Rosas</h2>
+
+      <!-- Foto en marco cuadrado -->
+      <div class="acerca-photo">
+        <img src="img/fondoabajo.jpg" alt="Samuel Rosas">
+      </div>
+
+      <p class="fade-in">
+        Mi nombre es Samuel Rosas y soy una persona creativa, analítica y comprometida con lo que hago. Soy un creador con sentido, y me motiva el amor y el propósito auténtico detrás de cada proyecto, lo que impulsa mi trabajo en escritura, composición musical, edición de audio y desarrollo audiovisual con enfoque reflexivo.
+      </p>
+    </div>
+
+    <!-- Bloque inferior: redes sociales grandes -->
+    <div class="acerca-bottom">
+      <a href="https://www.instagram.com/samo_occ/" target="_blank" title="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.youtube.com/channel/UCpkZeZhZzpeWTL8ClNI4OjQ" target="_blank" title="YouTube">
+        <i class="fab fa-youtube"></i>
+      </a>
+      <a href="https://soundcloud.com/samocc?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" target="_blank" title="SoundCloud">
+        <i class="fab fa-soundcloud"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer vacío para scroll hasta abajo -->
+  <footer id="contacto"></footer>
+
+  <!-- Librerías externas -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.39/Tone.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.39/Tone.js"></script>
+</body>
+</html>
